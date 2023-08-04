@@ -626,97 +626,145 @@ b[0] = 'kk'
 console.log(b)	// [ 'kk', 'll' ]
 console.log(aa)	// [ 'oo', 'll' ]
 
-問93
-var aa = ['oo', 'll'];をbbにコピーしてaaは['kk', 'jj'];が挿入されるようにしてください。
-期待する結果
-	bb //['oo', 'll']
-    aa //['kk', 'jj'];
+// 問93
+// var aa = ['oo', 'll'];をbbにコピーしてaaは['kk', 'jj'];が挿入されるようにしてください。
+// 期待する結果
+// 	bb //['oo', 'll']
+//     aa //['kk', 'jj'];
 
-var aa = ['oo', 'll'];
-var bb = aa.splice(0, aa.length, ['kk','jj'])
-bb//['oo', 'll'];
-aa//['kk', 'jj'];
-問94
+// →aa をコピーしてbbを作り、その後bb の内容を入れ替える
 
-このような配列 var aa = ['ii', 'jj', 'kk'];がある。'jj'要素を削除するために deleteを使った場合とspliceを使った場合の違いは何か。それがわかるコードを書いてください
+const aa = ['oo','ll']
+const bb = [...aa]
+bb.splice(0,bb.length,'kk','jj')
+console.log(aa)	// [ 'oo', 'll' ]
+console.log(bb) // [ 'kk', 'jj' ]
 
-deleteは削除されたインデックスを残す。spliseは間を詰める。
-var aa = ['ii', 'jj', 'kk'];
-delete aa[1];
-aa//['ii', undefined, 'kk']
-var aa = ['ii', 'jj', 'kk'];
-aa.splice(1,1);
-aa//['ii', 'kk']
-問95
+// 問94
+// このような配列 var aa = ['ii', 'jj', 'kk'];がある。
+// 'jj'要素を削除するために deleteを使った場合とspliceを使った場合の違いは何か。
+// それがわかるコードを書いてください
+//
+// ↓答えから学べればOK
+//
+// deleteは削除されたインデックスを残す。spliseは間を詰める。
+// var aa = ['ii', 'jj', 'kk'];
+// delete aa[1];
+// aa	//['ii', undefined, 'kk']
+// var aa = ['ii', 'jj', 'kk'];
+// aa.splice(1,1);
+// aa	//['ii', 'kk']
 
-var text = 'key and value';このような文字列を単語毎に配列の要素として格納してください //期待する結果 //['key','and','value']
+// 問95
+// var text = 'key and value';
+// このような文字列を単語毎に配列の要素として格納してください
+// 期待する結果 //['key','and','value']
 
+const text = 'key and value';
+const a = text.split(' ')
+console.log(a)	// [ 'key', 'and', 'value' ]
+
+// 模範解答では正規表現を使用しているが、split() の方が圧倒的に簡単
+// ただし、正規表現の g フラグと match() を組み合わせて同様のことができることを押さえておこう
+// g(global) フラグについて
+// https://ja.javascript.info/regexp-introduction#ref-84
+// g フラグが指定された場合の match() の返り値
+// https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/String/match#%E8%BF%94%E5%80%A4
+// g フラグがあった場合は、正規表現全体に一致したすべての結果を返します
 var text = 'key and value';
 var arraytext = ii.match(/\w+/g);
-arraytext
-['text', 'and', 'value']
-問96
+arraytext	// ['text', 'and', 'value']
 
-var text = 'abc def ghi jkl';の空白の直前の文字をグループ化してカンマ文字の後ろに移動させなさい。
+// 問96 #正規表現
+// var text = 'abc def ghi jkl';の空白の直前の文字をグループ化してカンマ文字の後ろに移動させなさい。
+// 期待する文字列 'ab,cde,fgh,ijkl'
 
-期待する文字列 'ab,cde,fgh,ijkl'
+// 単語の最後の文字を取り分けるのに正規表現を使用した版
+const text = 'abc def ghi jkl'
+const regex = /(\w+)(\w)/
+let a = text.split(' ')
+let prefix = ''
+const b = a.map(str => {
+	const r = str.match(regex)
+	const word = prefix + r[1]
+	prefix = r[2]
+	return word
+})
+const c = b.join(',')
+console.log(c)
 
+
+// メモ：正規表現をつかわず、文字をslice()で切り出す方法でもいける
+https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/String/slice
+const a = "word"
+console.log(a.slice(0, a.length-1))	// wor
+console.log(a.slice(-1))			// d
+
+// 模範解答
+// replace() を使用するとこんなにシンプルに書けるのか！
 var text = 'abc def ghi jkl';
 text.replace(/(.)\s/g,',$1');
 'ab,cde,fgh,ijkl'
 
-//or
+// or（別解）
 
 var text = 'abc def ghi jkl';
-text.replace(/(.)\s/g,function(m0, m1){
+text.replace(/(.)\s/g,function(m0, m1){ // replace() に関数を指定することができる
    return ',' + m1
 });
 'ab,cde,fgh,ijkl'
-問97
 
- var array = ['aa','bb','cc','dd','ff']; このような配列の要素'bb'の前に'ff'を移動させて ['aa','ff','bb','cc','dd']このような配列を完成させてください
+// 問97
+// var array = ['aa','bb','cc','dd','ff']; このような配列の要素'bb'の前に'ff'を移動させて ['aa','ff','bb','cc','dd']このような配列を完成させてください
+// 
+// 切ったり貼ったりはsplice()
 
-array.splice(1,0,array.splice(4,1)[0])
-//array
-//['aa','ff','bb','cc','dd']
-問98
+const array = ['aa','bb','cc','dd','ff']
+const ff = array.splice(4,1)
+console.log(ff)					// 'ff'
+console.log(array)				// 'aa','bb','cc','cc'	// spliceするとarrayは書き換わっている
+array.splice(1,0,ff[0])
+console.log(array)
 
-nullの比較についてそれぞれtureかfalseか答えてください
-
-null < 1
-null > 1
-null < -1
-null > -1
-
-null < 0
-null <= 0
-null >= 0
-null > 0
-null == 0
-null === 0
+// 問98
+// nullの比較についてそれぞれtureかfalseか答えてください
+// 
+// null < 1
+// null > 1
+// null < -1
+// null > -1
+// 
+// null < 0
+// null <= 0
+// null >= 0
+// null > 0
+// null == 0
+// null === 0
+// 
+// →これは覚えなくとも良い、疑問に思ったときにつど調べる能力があればよい
+// →なお、数値コンテキストではnull は0 と振る舞う
 
 //Anser
-null < 1 //ture
+null < 1//ture
 null > 1 //false
 null < -1 //false
 null > -1 //true
-//数値コンテキストではnullは0と解釈されるため、1より小さく、-1より大きい。
 null < 0 //false
 null <= 0 //true
 null >= 0 //true
 null > 0 //false
 null == 0 //false
 null === 0 //false
-//0以下であるが0より小さくはない。
-//0以上であっても0より大きくはない。
-問99
 
-こちらの2つのif分の条件式の違いを教えてください
+// 問99
+// こちらの2つのif分の条件式の違いを教えてください
+// 
+// if('a' in obj)
+// if(obj.a)
+// 
+// →答えを見て学ぶことができればOK
 
-if('a' in obj)
-if(obj.a)
-
-
+// 模範解答
 **in演算子の場合**
 objにキーaが存在する場合(undefinedでも)trueを返す
 if('a' in obj)は実行される
@@ -724,8 +772,24 @@ if('a' in obj)は実行される
 **obj.aの場合**
 undefinedの場合falseを返す
 if(obj.a)が存在しても未定義だと実行されない
-問100
 
-var arr = [ 10, 20 ];においてarr[2]が存在しないことを確認してください
+// →そのようになるか実験してみる
+const obj = {
+	b: 'hello'
+}
+Object.defineProperty(obj,'a',{})	// undefineなaプロパティを追加
+console.log(obj)
+console.log('a' in obj)	// true
+console.log(obj.a)		// undefined
 
-2 in arry;
+if('a' in obj){ console.log('hello') }	// hello
+if(obj.a){ console.log('world') }		// worldは出ない
+
+
+// 問100
+// var arr = [ 10, 20 ];においてarr[2]が存在しないことを確認してください
+
+const arr = [ 10, 20 ];
+console.log(1 in arr);		// true
+console.log(2 in arr);		// false
+

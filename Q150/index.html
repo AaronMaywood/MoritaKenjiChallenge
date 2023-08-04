@@ -1,0 +1,15 @@
+<body>
+	<!-- (1) -->
+	<div id="target">
+	  <span>既存の内容</span>
+	  <!-- (2) -->
+	</div>
+	<!-- (3) -->
+</body>
+<script>
+	const target = document.querySelector('div#target')
+	const html = '<p>子要素</p>'
+	target.insertAdjacentHTML('beforebegin',html)	// (1)の場所に挿入
+	target.insertAdjacentHTML('beforeend',html)		// (2)の場所に挿入
+	target.insertAdjacentHTML('afterend',html)		// (2)の場所に挿入
+</script>
