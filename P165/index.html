@@ -1,0 +1,10 @@
+<div id="target" class="foo-after" onClick="toggleStyle()">
+  click here!
+</div>
+<script>
+function toggleStyle(){
+	const elem = document.querySelector('.foo-after')
+	elem.className = 'foo-before'
+	console.log(elem)
+}
+</script>

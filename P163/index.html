@@ -1,0 +1,13 @@
+<div class="fafa"><span></span></div>
+<div class="fafa"><span></span></div>
+<div class="fafa"><span></span></div>
+<div class="fafa"><span></span></div>
+ 
+<script>
+const s = document.querySelectorAll('span');
+const s2 = [...s]					// シャローコピー＆配列に変換
+console.log(s2)						// [span,span,span,span]
+console.log(typeof s2)				// Oject
+console.log(s2 instanceof Array)	// true
+</script>
+
