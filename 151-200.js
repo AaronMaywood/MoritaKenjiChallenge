@@ -807,7 +807,7 @@ console.log(str.replace(/(?:\r\n|\r|\n)/g, '<br>')) // hello<br>world<br>hello<b
 const {g,h} = {g:3, h:4};
 console.log(g,h) //3, 4
 
-// 問197 #高度な話題
+// 問197 #ローカルストレージ
 // ローカルストレージとセッションストレージの違いを教えてください.
 
 // 模範解答
@@ -824,11 +824,13 @@ console.log(g,h) //3, 4
 - 異なるタブなら異なるsessionストレージ
 - 同一タブ内なら保存は維持される
 
-
 ストレージ内のデータは文字列
 ストレージにオブジェクトは渡せない(JSONを使ってください)
-問198 ローカルストレージのkeyとしてfooを値を"fafa"と設定、取得、削除、全てをクリアーにしてください
 
+// 問198 #ローカルストレージ
+// ローカルストレージのkeyとしてfooを値を"fafa"と設定、取得、削除、全てをクリアーにしてください
+
+// 模範解答
 localStrage.foo = 'fafa';
 localStrage.setItem('foo','fafa');
 localStrage.getItem('foo');
@@ -836,6 +838,9 @@ localStorage.removeItem('foo')
 localStorage.clear();
 var key = localStorage.key(0)
 console.log(key + 'のストレージは' + localStorage[key]);
-問199
 
-問200
+// 問199
+// 問題文なし、スキップ
+
+// 問200
+// 問題文なし、スキップ
