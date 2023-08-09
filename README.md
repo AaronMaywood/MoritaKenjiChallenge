@@ -23,3 +23,12 @@
 #正規表現
 #モジュール
 #ローカルストレージ
+#ジェネレーター
+#シンボル
+#ObjectAPI
+#オブジェクト指向
+#ProxyとReflection
+https://ja.javascript.info/proxy
+
+#jQuery
+[TODO] ↑のタグをつける
