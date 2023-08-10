@@ -29,6 +29,10 @@
 #オブジェクト指向
 #ProxyとReflection
 https://ja.javascript.info/proxy
+#TaskQueue
+#Promise (含む Async/Await）
+#co
+#高階関数
 
 #jQuery
 [TODO] ↑のタグをつける
