@@ -653,7 +653,8 @@ console.log(getSum())		// Error: a is not defined
 // const getSum = (a = _err('a is not defined'), b = _err('b is not defined'))=> a + b
 
 
-// 問36 strict modeの代表的な制約を挙げて説明してください。
+// 問36
+// strict modeの代表的な制約を挙げて説明してください。
 // https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Strict_mode
 // →模範回答は細かすぎる、
 // https://ja.javascript.info/strict-mode
