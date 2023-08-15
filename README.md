@@ -33,6 +33,11 @@ https://ja.javascript.info/proxy
 #Promise (含む Async/Await）
 #co
 #高階関数
-
+#ビット操作
+#JSON
+#メモ化
+#Unicode
+#reduce
+#Node.js
 #jQuery
 [TODO] ↑のタグをつける

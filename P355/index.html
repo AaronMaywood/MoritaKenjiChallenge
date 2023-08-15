@@ -1,0 +1,11 @@
+<div>test1</div>
+<div>test2</div>
+<div>test3</div>
+<script>
+const a = document.querySelectorAll('div')
+console.log(a instanceof NodeList)	// true, つまり a はNodeList
+console.log(a[Symbol.iterator])		// f values() { [native code] } →内容はわからないが、関数であることがわかる
+									// NodeListにはSymbol.iteratorが実装されている→イテレーターである
+// したがって、以下の操作ができる
+console.log([...a])					// (3) [div,div,div]
+</script>
