@@ -1,4 +1,4 @@
-// 問201 #ローカルストレージ
+// 問201 #高度な話題 #ローカルストレージ
 // ローカルストレージの値を存在するだけ列挙してください
 
 // 模範解答
@@ -6,7 +6,7 @@ for (var i = 0; i < localStorage.length; i++){
   console.log(localStorage.key(i))
 }
 
-// 問202 #ローカルストレージ
+// 問202 #高度な話題 #ローカルストレージ
 // ローカルストレージに次のようなオブジェクト
 // 	const dataObj = {
 // 	 'id': 0010,
@@ -64,7 +64,8 @@ setTimeout(()=> {create.get()}, 1000);	// 動作するように修正
 										// したがって、アロー関数を普通の関数に書き換えても動作する
 										// setTimeout(function(){create.get()},1000)
 
-// 問204 こちらの
+// 問204
+// こちらの
 // 	function Person() {
 // 		var self = this;
 // 		self.age = 0;
@@ -180,9 +181,9 @@ var deduped = [1,1,'a','a'].filter(function(x, i, arr){
 })
 deduped //[1,'a']
 
-問210 このような
-<div id="box"></div>
-DOMの中に2016年8月27日00時00分00秒から9月11日00時00分00秒までセール中が表示されるようにしてください。
+// 問210 このような
+// 	<div id="box"></div>
+// DOMの中に2016年8月27日00時00分00秒から9月11日00時00分00秒までセール中が表示されるようにしてください。
 
 // 模範解答
 
@@ -378,9 +379,10 @@ var dimension = function(radius, height){
 }(10,20);
 console.log(dimension);	// 2094.3951023931954
 
-問219 オブジェクトのプロパティが存在するかどうか
+// 問219
+// オブジェクトのプロパティが存在するかどうか
 
-// →問題文が完成していないが、「!!obj.height」という表現でプロパティの存在をチェックできる
+// →問題文が完成していないが、「!!obj.height」という表現でプロパティの存在をチェックできることを理解すればよい
 // この他に https://note.affi-sapo-sv.com/js-object-property-check.php ではhasOwnPropertyやin演算子でチェックする方法が載っている
 
 var obj = {
@@ -432,7 +434,7 @@ multiplyAndLog(40,4)
 var hoge = document.querySelectorAll('h1');
 var newHoge = Array.prototype.slice.call(hoge, 1);
 
-// 問222 #正規表現
+// 問222 #高度な話題 #正規表現
 // var a = 'aabbccdde1e23ffgg'; とvar b = 'aabbccdde1e23ffgg';がある。 aとbを比較してaの方が先に数値が現れる場合trueを返してください
 
 // 模範解答
@@ -441,7 +443,7 @@ var b = 'aabbccddee123ffgg';
 
 a.search(/\d/) < b.search(/\d/); //true
 
-// 問223 #正規表現
+// 問223 #高度な話題 #正規表現
 // <div>abuout me</div>
 // divタグに囲まれた文字列を配列divArrayに格納しなさい
 
@@ -570,7 +572,7 @@ console.log(s.replace(/,/,'/'))		// aaa/bbb,ccc,ddd
 var s = 'aaa,bbb,ccc,ddd';
 console.log(s.replace(/,/g,'/'))	// aaa/bbb/ccc/ddd
 
-// 問234 #正規表現
+// 問234 #高度な話題 #正規表現
 // 下の変数sにある var s = 'aaa<div>bbb</div>ccc<div>ddd</div>eee'; divの中にあるtextを全て出力してください
 
 // - 最小一致 .*? を使い、
@@ -693,7 +695,7 @@ hash - #test
 クロスオリジン : 上記がいずれか一つでも違うこと
 セッションハイジャック : サーバーから渡されるセッションIDを盗み正規ユーザーになりすますこと
  
-// 問238
+// 問238 #高度な話題
 // location.assignとlocation.replaceの違いを教えてください
 
 // 模範解答
@@ -766,7 +768,8 @@ Object.defineProperty(プロパティをsetする対象オブジェクト,{プ�
 
 ※プロパティの内容＝デスクリプタ
 
-// 問243 let n = '124';を数値に変換してください。
+// 問243
+// let n = '124';を数値に変換してください。
 
 // 模範解答
 let n = '124';
@@ -790,7 +793,8 @@ console.log(parseInt(n,10))	// NaN
 // 模範解答
 if(n.value != null){//something}
 
-// 問245 オブジェクトの存在チェックをしてあったら実行する次のコード
+// 問245
+// オブジェクトの存在チェックをしてあったら実行する次のコード
 // 	var o = {f: function(){console.log('JS')}};
 // 	if(o){
 // 		if(o.f){
@@ -806,7 +810,8 @@ o && o.f && o.f();
 //同じ様なイデオムで代入の際に括弧でくくらないとエラーが起きることに注意してください
 //o && o.options && o.options.players > 50 && (flag = true);
 
-// 問246 var vの値を確実に数値にしたい。 'a'が入ってきた場合NaNではなく0を代入するようにしてください。
+// 問246
+// var vの値を確実に数値にしたい。 'a'が入ってきた場合NaNではなく0を代入するようにしてください。
 
 // 模範解答
 var n = +v || 0;
@@ -815,7 +820,8 @@ var n = +v || 0;
 console.log(+'a')		// NaN（数値に変換できない）
 console.log(NaN || 0)	// 0
 
-// 問247 var v を整数化してください
+// 問247
+// var v を整数化してください
 
 // 模範解答
 
@@ -844,7 +850,8 @@ Emp.prototype.name = "kenji";	// 共通の親にプロパティを追加する
 console.log(insEmp1.name) //"kenji";
 console.log(insEmp2.name) //"kenji"
 
-// 問249 ObjectとMapの違いを教えてください
+// 問249 #高度な話題 #Map
+// ObjectとMapの違いを教えてください
 
 // 模範解答
 
@@ -887,7 +894,8 @@ http://stackoverflow.com/questions/18541940/map-vs-object-in-javascript
         m.delete('key');
         m.size();
 
-// 問250 破壊的なメソッドをあげてください
+// 問250
+// 破壊的なメソッドをあげてください
 
 // →破壊的とは実行後にオリジナルのデータを改変してしまうこと
 let a = [1,3,2]

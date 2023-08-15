@@ -263,8 +263,8 @@ function f (name, time){
 var i = Promise.all([f('morita', 500),f('kkk', 500),f('jji', 500)])
 i.then(()=> console.log("done"))
 
-問312
-'http://localhost:3000/comments', 'http://localhost:3000/posts', 'http://localhost:3000/profile', 'http://localhost:3000/state', の順にGETリクエスト、それぞれresponseが返って来るまで、処理を止めて、返ってきたら次のリクエストをする実装をしてください。
+// 問312 #高度な話題 #Promise
+// 'http://localhost:3000/comments', 'http://localhost:3000/posts', 'http://localhost:3000/profile', 'http://localhost:3000/state', の順にGETリクエスト、それぞれresponseが返って来るまで、処理を止めて、返ってきたら次のリクエストをする実装をしてください。
 
 // FetchAPI を使う
 // NOTE: AaronMaywood のところには実在のアカウント名を入れる
@@ -484,24 +484,24 @@ async function asyncFunc() {
 
 // 問321 #高度な話題
 // イベントデリゲーションに関して。 こちらのDOMの
-// <ul id="todo-app">
-// 	<li class="item">Walk the dog</li>
-// 	<li class="item">Pay bills</li>
-// 	<li class="item">Make dinner</li>
-// 	<li class="item">Code for one hour</li>
-// </ul>
+//	<ul id="todo-app">
+// 		<li class="item">Walk the dog</li>
+// 		<li class="item">Pay bills</li>
+// 		<li class="item">Make dinner</li>
+// 		<li class="item">Code for one hour</li>
+// 	</ul>
 // li要素のそれぞれにイベントリスナーをアタッチしたもが下記です。
-// document.addEventListener('DOMContentLoaded', function() {
-// 	let app = document.getElementById('todo-app');
-// 	let items = app.getElementsByClassName('item');
-// 
-// 	// それぞれにイベントリスナーをアタッチする
-// 	for (let item of items) {
-// 		item.addEventListener('click', function() {
-// 			alert('you clicked on item: ' + item.innerHTML);
-// 		});
-// 	}
-// });
+//	document.addEventListener('DOMContentLoaded', function() {
+// 		let app = document.getElementById('todo-app');
+// 		let items = app.getElementsByClassName('item');
+// 	
+// 		// それぞれにイベントリスナーをアタッチする
+// 		for (let item of items) {
+// 			item.addEventListener('click', function() {
+// 				alert('you clicked on item: ' + item.innerHTML);
+// 			});
+// 		}
+// 	});
 // この問題はもしli要素が1000個あった場合1000個のリスナーを作るところにあります。
 // これは効率的ではありません。
 // 全体のコンテナーに対し1つのイベントリスナーをアタッチして上記と同じ動作をするようなイベントデリゲーションを実装してください
@@ -888,10 +888,11 @@ false
 // 模範解答
 //"object"
 
-// 問335 こちら
-// const arr = ["a", , "c"];
-// const sparseKeys = Object.keys(arr);
-// const denseKeys = [...arr.keys()];
+// 問335
+// こちら
+//	const arr = ["a", , "c"];
+// 	const sparseKeys = Object.keys(arr);
+// 	const denseKeys = [...arr.keys()];
 // のsparseKeysとdenseKeysを出力した際の違いを教えてください
 
 // →覚える必要はない、模範解答が理解できればよい
@@ -1094,8 +1095,8 @@ function logStuff(obj, callback){
 logStuff({name: 'morita', job: 'engineer'}, log);
 logStuff({name: 'morita', job: 'engineer'}, log);
 
-問343
-問342のlogStuffについて、第二引数で渡したcallbackの型をチェックしてFunctionだったら実行するようにしてください
+// 問343
+// 問342のlogStuffについて、第二引数で渡したcallbackの型をチェックしてFunctionだったら実行するようにしてください
 
 // 問342の安村の回答をもとにしている
 function logStuff(obj, log){

@@ -280,7 +280,7 @@ console.log(array2)
 // 
 // https://i.gyazo.com/ca4ce05d322cc16f16ea97df76badd0f.png
 
-// 問20 #class
+// 問20 #高度な話題 #class
 // コンストラクタWhoの初期化時に'morita'(String)を渡しインスタンスプロパティnameに代入、インスタンスメソッドgetNameの返り値がWho.prototype.name値になるいわゆる「classのようなもの」を作成してください
 // ※インスタンスメソッドはprototypeに代入してください
 
@@ -659,7 +659,8 @@ console.log(getSum())		// Error: a is not defined
 // https://ja.javascript.info/strict-mode
 // にある理解で十分
 
-// 問37 for in文に関する注意点を3つ挙げてください #高度な話題
+// 問37 #高度な話題
+// for in文に関する注意点を3つ挙げてください
 // for...in はオブジェクトのプロパティ巡回用
 // https://ja.javascript.info/object#ref-66
 // for...of は配列をはじめとしたiterable な値を巡回する用、この２つを混ぜないこと
@@ -671,12 +672,14 @@ console.log(getSum())		// Error: a is not defined
 
 let a = document.querySelectorAll('div')
 
-// 問39 配列var arr = ['f','o','x','k'];をインデックス順に出力させてください
+// 問39
+// 配列var arr = ['f','o','x','k'];をインデックス順に出力させてください
 
 var arr = ['f','o','x','k']
 arr.forEach(i => console.log(i))	// あるいは単に arr.forEach(console.log)
 
-// 問40 またイテレーターを使い順番に出力してください #高度な話題
+// 問40 #高度な話題
+// またイテレーターを使い順番に出力してください
 
 // 1. Symbol.iterator を使用する
 https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Symbol/iterator
@@ -757,8 +760,8 @@ for(i of a){
   console.log(i)
 }
 
-問46
-問題文がないのでスキップ
+// 問46
+// 問題文がないのでスキップ
 
 // 問47
 // 下記のような
@@ -779,7 +782,8 @@ array.map(i=>a.push(i.mail))
 console.log(a)	// [ 'fafa@eee.com', 'kkk@faf.com' ]
 
 
-// 問48 配列var passed = [12, 5, 8, 130, 44]
+// 問48
+// 配列var passed = [12, 5, 8, 130, 44]
 // の要素全てが10以上かどうかを評価してtrueかfalseを返してください。
 // また10以上のものが一つでもあった場合trueを返してください。
 
@@ -793,7 +797,8 @@ console.log( passed.every(i => i > 10) )	// false
 console.log( passed.some(i => i > 10) )		// true
 
 
-// 問49 二次元配列
+// 問49
+// 二次元配列
 // [['one', 'info@fa'],['two', 'send@fafa'],['three', 'hoso@fafa']];
 // の'two'の値を取得してください
 // →'send@fafa' を取り出すということ
@@ -819,7 +824,8 @@ fafa.forEach(i=>{
 
 console.log(o.two) //'send@fafa'
 
-// 問50 問49の変数fafaにインデックス3番目の要素として['four',fafa@eee]の配列を追加してください
+// 問50
+// 問49の変数fafaにインデックス3番目の要素として['four',fafa@eee]の配列を追加してください
 
 const fafa = [['one', 'info@fa'],['two', 'send@fafa'],['three', 'hoso@fafa']]
 

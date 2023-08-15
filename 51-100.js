@@ -19,9 +19,9 @@ for (var entry of m.entries()){
 	// [ 'two', 'send@fafa' ]
 	// [ 'three', 'hoso@fafa' ]
 
-問52 #正規表現
-'morita kenji'のような1つ以上の小英字、半角スペース、1つ以上の小英字にマッチした場合、配列['morita kenji']が返るようにしてください。
-
+// 問52 #高度な話題 #正規表現
+// 'morita kenji'のような1つ以上の小英字、半角スペース、1つ以上の小英字にマッチした場合、配列['morita kenji']が返るようにしてください。
+ 
 const s = 'morita kenji'
 const r = /[a-z]+ [a-z]+/
 console.log(s.match(r)) // [ 'morita kenji', index: 0, input: 'morita kenji', groups: undefined ]
@@ -31,8 +31,8 @@ console.log(s.match(r)) // [ 'morita kenji', index: 0, input: 'morita kenji', gr
 // https://ja.javascript.info/regexp-methods
 // console.log( /\w+\s\w+/.exec('morita kenji') )
 
-問53 #正規表現
-このような 'It is an important problem'と'The import duty is not cheap'の文字列内importにマッチするとbooleanを返す記述をしてください
+// 問53 #高度な話題 #正規表現
+// このような 'It is an important problem'と'The import duty is not cheap'の文字列内importにマッチするとbooleanを返す記述をしてください
 
 const str = 'Itjis an jmportant problem';
 const str2 = 'The import duty is not cheap';
@@ -59,8 +59,7 @@ isImport	//false
 let isImport = /.*\bimport\b.*/.test(str2);
 isImport	//true
 
-
-// 問54 #正規表現
+// 問54 #高度な話題 #正規表現
 // ひらがな全てにマッチ、半角カタカナ全てにマッチ、カタカナ全てにマッチする正規表現を記述してください
 //
 // →ひらがな全てにマッチとは、ひらがな全体の範囲内に文字が収まっているかということで、正規表現で文字の範囲を表記する文字クラスを使用して考える
@@ -81,7 +80,7 @@ console.log(/[ｦ-ﾟ]+/.test("ｦｧｨｩｪｫｬ"))	// true
 // Unicode エスケープシーケンスはキーボードから入力しにくい文字を16進数で表記することができる
 /^[\uFF65-\uFF9F]+$/ //半角カタカナ
 
-// 問55 #正規表現
+// 問55 #高度な話題 #正規表現
 // 「」の中に「ヤッホー!」の文字列が1回以上続く場合にのみマッチする正規表現を書いてください。(！が英単語を構成する文字以外の場合はどうか、また「ヤッホー！」が2回以上3回以下にマッチにはどう書きますか)
  
 // →問題の意味がわかりにくいので回答を見て進める
@@ -105,7 +104,7 @@ console.log(r.test(str4))	// false
 const str = '「ヤッホー?ヤッホー@」';
 console.log(/「(ヤッホー\W)+」/.exec(str)) //  ['「ヤッホー?ヤッホー@」', 'ヤッホー@']
 
-// 問56 #正規表現
+// 問56 #高度な話題 #正規表現
 // 正規表現の
 // /(ありがとう|こんにちは｜さようなら)/
 // と
@@ -121,7 +120,7 @@ const str = '彼はありがとうと言った';
 const str = '彼はありがとうと言った';
 /彼はありがとう|こんにちは｜さようならと言った/.exec(str);	//['彼はありがとう']
 
-// 問57 #正規表現
+// 問57 #高度な話題 #正規表現
 // 「When」、「Where」、「Who」、「What」、「Why」、「How」の単語のみにマッチする正規表現を書きなさい
 
 const r = /When|Where|Who|What|Why|How/
@@ -174,7 +173,8 @@ function ii(){
 const c = ii()
 console.log(c('home'))
 
-// 問62 今の時間、何時何分何秒を表してください
+// 問62
+// 今の時間、何時何分何秒を表してください
 // https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Date
 // 1. Date() を呼び出す
 console.log(Date())	// 'Thu Aug 03 2023 11:33:22 GMT+0900 (日本標準時)'
@@ -184,7 +184,8 @@ console.log(d.getHours())		// 時
 console.log(d.getMinutes())		// 分
 console.log(d.getSeconds())		// 秒
 
-// 問63 こちら
+// 問63
+// こちら
 // function getSomething(){
 //   return {
 //     first: 1,
@@ -283,7 +284,7 @@ let arr2 = [4, 5, 6];
 let arr = [1, 2, 3, ...arr2];
 console.log(arr);//[1, 2, 3, 4, 5, 6]
 
-// 問73 #モジュール
+// 問73 #高度な話題 #モジュール
 // 下記のようなあるファイル(module.js)で記述した
 // 	var foo = 'foo';
 // 	function bar(){};
@@ -675,7 +676,7 @@ var text = 'key and value';
 var arraytext = ii.match(/\w+/g);
 arraytext	// ['text', 'and', 'value']
 
-// 問96 #正規表現
+// 問96 #高度な話題 #正規表現
 // var text = 'abc def ghi jkl';の空白の直前の文字をグループ化してカンマ文字の後ろに移動させなさい。
 // 期待する文字列 'ab,cde,fgh,ijkl'
 

@@ -142,7 +142,8 @@ document.addEventListener('DOMContentload',function(){
 //この場合'DOMContentload'を使用。画像が読み込まれる前に実行されて高速。だが画像幅に対してのレイアウト変更をするようであれば'load'
 //[参照](http://qiita.com/gaogao_9/items/ec2b867d6941173fd0b1#_reference-1aa15cfa5c1cf1f77a86)
 
-// 問161 このような
+// 問161
+// このような
 // addeventListener('DOMcontentLoad',function(){something},[true,false])
 // イベントリスナーの第三引数のフラグは何か説明してください
 
@@ -150,7 +151,8 @@ document.addEventListener('DOMContentload',function(){
 // こちらの記事がわかりやすい
 // https://note.affi-sapo-sv.com/js-addeventlistener-usecapture.php
 
-// 問162 このような
+// 問162
+// このような
 // 	<div class='classA'>
 // 		<div>some1</div>
 // 		<p><div>some2</div></p>
@@ -175,7 +177,8 @@ var result = Array.prototype.filter.call(classA[0].childNodes,function(classA){
 });
 console.log(result) // 3つのdivが取得できている
 
-// 問163 このような
+// 問163
+// このような
 // <div class="fafa"><span></span></div>
 // <div class="fafa"><span></span></div>
 // <div class="fafa"><span></span></div>
@@ -246,14 +249,16 @@ target.onclick = function toggleStyle() {
   this.classList.toggle('foo-before');
 }
 
-// 問166 " fafa fafa eee "のような最初と最後に空白があるような文字列に対して、それらを含めない配列を返してください
+// 問166
+// " fafa fafa eee "のような最初と最後に空白があるような文字列に対して、それらを含めない配列を返してください
 // 
 // String.prototype.trim() を使えば前後の空白を除去できる
 // https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/String/trim
 const str = " fafa fafa eee "
 console.log(str.trim().split(" "))
 
-// 問167 "abcdefg"のような文字列をインデックスと値が取れるオブジェクトに変更してください 期待する結果。 {0:a,1:b,2:c,3:d,4:e,5:f,6:g}
+// 問167
+// "abcdefg"のような文字列をインデックスと値が取れるオブジェクトに変更してください 期待する結果。 {0:a,1:b,2:c,3:d,4:e,5:f,6:g}
 // 
 const str = "abcdefg";
 const arr = str.split('')
@@ -266,7 +271,8 @@ const str = "abcdefg";
 const obj = Object.prototype.valueOf.call(str)
 console.log(obj) // [String: 'abcdefg']	←これにしかならないので間違い
 
-// 問168 "abcdefg"のような文1文字づつの要素となる配列に変更してください 期待する結果 ["a", "b", "c", "d", "e", "f", "g"]
+// 問168
+// "abcdefg"のような文1文字づつの要素となる配列に変更してください 期待する結果 ["a", "b", "c", "d", "e", "f", "g"]
 
 const str = "abcdefg";
 const arr = str.split('')
@@ -277,7 +283,8 @@ const str2 = "abcdefg";
 const arry = Array.prototype.slice.call(str2);
 arry //["a", "b", "c", "d", "e", "f", "g"]
 
-// 問169 "apple banana orenge"のような文字列を空白で区切り、それそれの「単語」をObjectのkey値として取得できるようにしてください。 期待する結果。 {0: "apple", 1: "banana", 2: "orenge"}
+// 問169
+// "apple banana orenge"のような文字列を空白で区切り、それそれの「単語」をObjectのkey値として取得できるようにしてください。 期待する結果。 {0: "apple", 1: "banana", 2: "orenge"}
  
 // 模範解答
 var string = "apple banana orenge";
@@ -308,7 +315,8 @@ for(value of arrayed.entries()){
 var map = new Map(newarray)
 map //{0: "apple", 1: "banana", 2: "orenge"}
 
-// 問170 add()を実行した際 3 、add(2)としたら 4 add(2,3)を実行したら 5 が返ってくる関数addを定義してください
+// 問170
+// add()を実行した際 3 、add(2)としたら 4 add(2,3)を実行したら 5 が返ってくる関数addを定義してください
 
 // 模範解答
 //デフォルトパラメータ
@@ -332,7 +340,7 @@ console.log(add(2,3))//5
 // https://ja.javascript.info/logical-operators#ref-660
 condition && dosomething();
 
-// 問172
+// 問172 #古い話題
 // こちらは
 // for (var i=0; i<5; i++) {
 //     setTimeout(function(){
@@ -739,7 +747,8 @@ console.log(fnn.call(module))	// 4 bind を使わずにこうでもよい
 //生成する関数にもともとのthis参照しているオブジェクトを束縛させる必要がある
 // →関数だけ取り出してfnn に束縛した時点で this 参照が途切れるため、fnn() を実行するときには改めて this を明示する
 
-// 問193 したのような記述がある
+// 問193
+// したのような記述がある
 // function list (){
 // 	return Array.prototype.slice.call(arguments);
 // }
@@ -758,7 +767,8 @@ function list (){
 var bindedList = list.bind(null, 1);	// bind で引数を先行して渡しておくことができる
 console.log(bindedList(3,4,5)) //[1, 3, 4, 5]
 
-// 問194 <ul id="list"></ul>がある。 document.createFragmentをつかってvar array = ["Internet Explorer", "Mozilla Firefox", "Safari", "Chrome", "Opera"]; がliのtextContentとなるようなDOMを作成してください。
+// 問194
+// <ul id="list"></ul>がある。 document.createFragmentをつかってvar array = ["Internet Explorer", "Mozilla Firefox", "Safari", "Chrome", "Opera"]; がliのtextContentとなるようなDOMを作成してください。
 
 // 模範解答（不要なコードを削除してある）
 
@@ -777,8 +787,8 @@ list.appendChild(fragment);
 //（フラグメントへのappendChild()は）DOMツリーに追加するのではないのでリフローが行われない
 //（最後のlist.appendChild でDOMツリーに追加し、リフローが行われる）
 
-問195 #正規表現
-文字列の中で\nがあったら全てを<br>に置き換える正規表現を表してreplaceしてください
+// 問195 #高度な話題 #正規表現
+// 文字列の中で\nがあったら全てを<br>に置き換える正規表現を表してreplaceしてください
 
 // 単純に \n だけを対象にするにはこう
 const str = "hello\nworld"
@@ -801,13 +811,14 @@ console.log(str.replace(/(?:\r\n|\r|\n)/g, '<br>')) // hello<br>world<br>hello<b
 // >	(?:x)	非キャプチャグループ: "x" に一致しますが、一致した内容は記憶しません。
 // →今回は一致した内容は使われないため、記憶していてもしていなくてもよい. つまり ?: を使わなくともよい
 
-// 問196 こちらを{g:3, h:4}それぞれg,hにわりあててください
+// 問196
+// こちらを{g:3, h:4}それぞれg,hにわりあててください
 
 // 模範解答
 const {g,h} = {g:3, h:4};
 console.log(g,h) //3, 4
 
-// 問197 #ローカルストレージ
+// 問197 #高度な話題 #ローカルストレージ
 // ローカルストレージとセッションストレージの違いを教えてください.
 
 // 模範解答
@@ -827,7 +838,7 @@ console.log(g,h) //3, 4
 ストレージ内のデータは文字列
 ストレージにオブジェクトは渡せない(JSONを使ってください)
 
-// 問198 #ローカルストレージ
+// 問198 #高度な話題 #ローカルストレージ
 // ローカルストレージのkeyとしてfooを値を"fafa"と設定、取得、削除、全てをクリアーにしてください
 
 // 模範解答

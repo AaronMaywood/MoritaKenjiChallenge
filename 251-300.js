@@ -98,7 +98,8 @@ const b = () => console.log(this.a)
 b()	// hello
 
 
-// 問254 var obj = { foo: 'bar', baz: 42 }; をMapオブジェクトに変換してください
+// 問254 #高度な話題 #Map
+// var obj = { foo: 'bar', baz: 42 }; をMapオブジェクトに変換してください
 
 // 模範解答
 // →new Map には配列（などのiterable）を渡す必要がある.
@@ -332,7 +333,7 @@ console.log(obj) //{0: 'a', 1: 'b', 2: 'c'}
 	return result;
 },{}) //{a: 1, b: 3}
 
-// 問261
+// 問261 #高度な話題 #Map
 // こちら
 // const arr = [
 //     { key: 'foo', val: 'bar' },
@@ -348,14 +349,14 @@ const arr = [
 const result = new Map(arr.map((i) => [i.key, i.val]));
 console.log(result); // Map {'foo' => 'bar', 'hello' => 'world'}
 
-問262
-こちら
-const characters = ['b', 'd', 'a', 'c'];
-const sortedCharacters = characters.sort()
-console.log(sortedCharacters) //['a', 'b', 'c', 'd']
-console.log(sortedCharacters === characters) //true
-配列をsortした返り値は同じオブジェクトを参照します。
-sortをした上で新しい配列を返すようにしてください。
+// 問262
+// こちら
+//	const characters = ['b', 'd', 'a', 'c'];
+// 	const sortedCharacters = characters.sort()
+// 	console.log(sortedCharacters) //['a', 'b', 'c', 'd']
+// 	console.log(sortedCharacters === characters) //true
+// 配列をsortした返り値は同じオブジェクトを参照します。
+// sortをした上で新しい配列を返すようにしてください。
 
 // →シャローコピーをしたものをsortするようにすればよい
 
@@ -369,7 +370,7 @@ const characters = ['b', 'd', 'a', 'c'];
 const sortedCharacters = characters.toSorted();
 console.log(sortedCharacters === characters) //false
 
-// 問263 #高度な話題
+// 問263 #高度な話題 #ジェネレーター
 // ジェネレーター関数を使って１ずつ値を出力してください。
 
 // 模範解答
@@ -394,7 +395,8 @@ var iterator = gen();
 console.log(iterator.next()) //'foo'
 console.log(iterator.next()) //'finish'
 
-// 問265 数値1から3までの値を返すgenarator関数で生成されたiteratableをfor-of文に使い値を出力してください。(その際for-of文での戻り値を捨てていることを確認してください。)
+// 問265 #高度な話題 #ジェネレーター
+// 数値1から3までの値を返すgenarator関数で生成されたiteratableをfor-of文に使い値を出力してください。(その際for-of文での戻り値を捨てていることを確認してください。)
  
 // 模範解答
 var fun = function * (){
@@ -412,7 +414,7 @@ for(index of iterator){
 //2
 //3
 
-// 問266 #高度な話題
+// 問266 #高度な話題 #ジェネレーター
 // 3つのgenerator関数、foo,bar,bazはそれぞれ関数名の文字列をyield operatorに持ち、fooは次の処理をbarに代理させて、barは次の処理をbaz、それぞれyield値で実行するように定義してください。さらにfor-of文で'foo','bar','baz'と連続で出力してください。
  
 // →問題文がわかりにくい、以下のコードが理解できればOK
@@ -439,7 +441,7 @@ for (index of foo()){
 //'bar'
 //'baz'
 
-// 問267 #高度な話題
+// 問267 #高度な話題 #ジェネレーター
 // 値が'a'ならgenerator関数内のtry-catch内で値をバックアップ、'b'なら呼び出し元で例外を発生させるgenerator関数を定義してください。
  
 // 模範解答
@@ -466,7 +468,7 @@ try {
 	console.log('Uncaught', e);
 }
 
-// 問268 #高度な話題
+// 問268 #高度な話題 #ジェネレーター
 // こちらの
 // const foo = (name, callback) => {
 //     setTimeout(() => {
@@ -522,7 +524,7 @@ controller(function* () {
 // b
 // c
 
-// 問269 #高度な話題
+// 問269 #高度な話題 #ジェネレーター
 // ジェネレーター関数barを実行して、返り値のiteratorが持つnext()すると、 1,2回目はvalue値がそれぞれ1,2。 3,4回目はfooが実行してそれぞれ3,4とするようにして、 4回目はさらに'z: Z, w: W'をコンソール出力。 5回目はbarが5。 6回目はvalueはundefined。文字列で'x: X, y: Y, v: V'を出力してください。
 
 // →問題文がわかりにくい、↓のソースが理解できれば良い
@@ -553,7 +555,7 @@ console.log(it.next( 'W' )) // z: Z, w: W
 console.log(it.next( 'V' )) // x: X, y: Y, v: V
 							// { value:undefined, done:true }
 
-// 問270 #高度な話題
+// 問270 #高度な話題 #ジェネレーター
 // generatorを作成してimgタグのsrc属性が1~7.pngを参照するようにしてそれぞれ格納した配列を作ってください。
 
 // 模範解答
@@ -570,7 +572,7 @@ for(var i of ge(1,7)){
 }
 console.log(arry)	// [ "<img src='1.png'>", "<img src='2.png'>", "<img src='3.png'>", "<img src='4.png'>", "<img src='5.png'>", "<img src='6.png'>", "<img src='7.png'>" ]
 
-// 問271 #高度な話題
+// 問271 #高度な話題 #ジェネレーター
 // for-ofに渡すと1~10までの数値を返すitarableなオブジェクトを自作してください。
 
 // 模範解答
@@ -593,7 +595,7 @@ for(i of obj){
 	console.log(i)	// 1 2 3 4 5 6 7 8 9 10
 }
 
-// 問272 #高度な話題
+// 問272 #高度な話題 #ジェネレーター
 // こちらの
 // function* g(){
 // 	const num =  yield 30
@@ -618,7 +620,7 @@ console.log(iterator.next(1).value) //3
 console.log(iterator.next(1).value) //2
 console.log(iterator.next(1).value) //undefined
 
-// 問273 #高度な話題
+// 問273 #高度な話題 #ジェネレーター
 // こちらのfooを
 // function* foo(x) {
 //     var y = 2 * (yield (x + 1));
@@ -644,7 +646,7 @@ console.log(it.next())		//{value: 6, done: false}
 console.log(it.next(12))	//{value: 8, done: false}
 console.log(it.next(13))	//{value: 42, done: true}
 
-// 問274 #高度な話題
+// 問274 #高度な話題 #ジェネレーター
 // 1秒毎に1加算した値をコンソール出力してください。
 
 // ↓で簡単にできるのだが、これをジェネレーターを使って書けということらしい
@@ -683,7 +685,8 @@ run(countUp());
 // 模範解答
 location.href.startsWith('http');
 
-// 問276 location.href'で返す文字の最後が'/'かどうかを判定する関数を定義してください。
+// 問276
+// location.href'で返す文字の最後が'/'かどうかを判定する関数を定義してください。
 
 // 模範解答
 

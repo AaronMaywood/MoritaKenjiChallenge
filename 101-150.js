@@ -41,7 +41,7 @@ console.log(str.substring(1,-3))	// 'あ'
 							//substring(-3,1)と解釈され負の数は0と見なされ
 							//substring(0,1)と同等の処理をする
 
-// 問103 #正規表現
+// 問103 #高度な話題 #正規表現
 // 次のような文字列abcdefgのcとeそれぞれを大文字にしてください
 
 // 模範解答
@@ -111,7 +111,8 @@ console.log(value) //0
 var array = [];
 array.length !== 0 //false
 
-// 問108 こちらは自身のプロパティが定義されていない場合falseが返ることを期待しているがtrueが返る
+// 問108
+// こちらは自身のプロパティが定義されていない場合falseが返ることを期待しているがtrueが返る
 // 	var obj = {};
 // 	obj ? true : false;
 // 自身のプロパティを持っていない場合falseが返るようにしてください
@@ -234,7 +235,7 @@ console.log(i)	// -5
 				// この場合、最初に該当した-5 にしか反応しないので、
 				// 模範解答よりも filter() を使用した最初の例がいいと思う
 
-// 問117
+// 問117 #高度な話題 #ジェネレーター
 // gen.next().valueを実行すると値が1づつ返ってくるようなGenerator関数を作り、1,2,3と出力してください
 // 
 // ジェネレータのおさらい
@@ -291,8 +292,8 @@ string.length //3 文字列プリミティブをオブジェクトとしてア�
 
 //undefinedは変数はあるものの、まだその値がないことを示す
 
-問120
-変数fafaの値がnullかどうかを確認してください
+// 問120
+// 変数fafaの値がnullかどうかを確認してください
 
 var fafa = null;
 console.log(typeof fafa)		// typeof ではObjectと返ってくるから typeofは使えない
@@ -341,8 +342,8 @@ document.getElementById('parent').appendChild(fragment);
 // 問123 #高度な話題(XHTMLは基本使用しないのでこの話題は飛ばして良い）
 // XHTMLにscriptタグで記述する際のCDATAタグをどのように書くか教えてください。またもしそれを書かない場合の実体参照、 > と < をどのように書くか教えてください。また、&と'、'はそれぞれエスケープ文字でどのように書きますか？
 
-問124
-実体参照に直すscriptを書いてください
+// 問124
+// 実体参照に直すscriptを書いてください
 
 →<, > の２文字を実態参照に置換することを考える
 < ... &lt;
@@ -363,10 +364,10 @@ console.log(str)	// &lt;h2>hello&lt;/h2>
 str = str.replace(/>/g,'&gt;')
 console.log(str)	// &lt;h2&gt;hello&lt;/h2&gt;
 
-問125 #正規表現
-次の文章中の
- My name is Taro Suzuki and I am a researcher at ABC.
-小文字のaで始まる英単語にのみマッチする正規表現を書いてください。1文字の場合もマッチの対象で
+// 問125 #高度な話題 #正規表現
+// 次の文章中の
+// 	My name is Taro Suzuki and I am a researcher at ABC.
+// 小文字のaで始まる英単語にのみマッチする正規表現を書いてください。1文字の場合もマッチの対象で
 
 // 正規表現構文早見表
 // https://developer.mozilla.org/ja/docs/Web/JavaScript/Guide/Regular_expressions/Cheatsheet
@@ -386,7 +387,7 @@ const str7 = 'My name is Taro Suzuki and I am a researcher at ABC.';
 console.log(str7.match(/\ba\w*\b/g)); //['and','am','a','at']
 //\sa\w*\sだと\sは文字の先頭や末尾にはマッチしないので、文章の先頭や末尾にある英単語が対象から外れてしまうことに注意してください。
 
-// 問126 #正規表現
+// 問126 #高度な話題 #正規表現
 // <p>や<img src="fafafa">などタグにマッチする正規表現を作ってください。またタグ名だけを抜き取ったものも教えてください。
 // 期待する値"" ※</ではじまる閉じタグは除外
 
@@ -409,7 +410,7 @@ const re4 = str4.match(reg2);
 console.log(re4); //['<p>','p',null]
 console.log(re4[0]); //<p>
 
-// 問127 #正規表現
+// 問127 #高度な話題 #正規表現
 // 下のこちらを使い
 // var myRe=/ken*/g; var str2 = 'fafakenfafkenji';
 // 文字列の中のkenだけをexecメソッドを使いマッチした文字を全て出力、マッチした文字列の後のインデックスを同時に出力してください
@@ -424,7 +425,7 @@ while ((array = myRe.exec(str2)) !== null) {
 	console.log( array[0] + ' を見つけました。' + '次のマッチは ' + myRe.lastIndex + ' からです。')
 }
 
-// 問128 #正規表現
+// 問128 #高度な話題 #正規表現
 // 次のconst string3 = 'washable reasonable accessible assemble answerable';
 // こちらの文字列, 「able」で終わる英単語の前の部分([able]を除いた部分)にマッチする正規表現を書きなさい。
 // 期待する結果 ['wash','reason','answer']
@@ -440,7 +441,7 @@ console.log(string3.match(reg5)); //['wash','reason','answer']
 // > Jack(?=Sprat|Frost)/ は "Jack" の後に "Sprat" または "Frost" が続く場合のみ一致します。しかし、"Sprat" も "Frost" も一致した結果には含まれません。
 
 
-// 問129
+// 問129 #高度な話題 #正規表現
 // こちらの文字列
 // const nen1 = 'ケンジは昭和55年生まれの35歳であり、ケンジの母は昭和22年生まれの64歳である'
 // を使い、後ろに「年」および数字以外の文字が続く1桁以上の数字にマッチする正規表現を書いてください
@@ -461,7 +462,7 @@ console.log(nen1.match(reg6)); //['35','64']
 //※ 一番最初に見つけたマッチだけが欲しい場合、execの方がいいかもしれません
 //see: https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/String/match
 
-// 問130 #正規表現
+// 問130 #高度な話題 #正規表現
 // 下のような文字列const str222 = 'わたしの名前は「もりた」です。あだなは「もりけん」です'; のカギ括弧内とその文字列にマッチするような正規表現を書いてください
 // ['「もりた」','「もりけん」']
 
@@ -476,7 +477,7 @@ console.log(result); //['「もりた」','「もりけん」']
 // > *、+、?、{} といった数量詞の直後に使用した場合、既定とは逆に、その数量詞を非貪欲（出現回数が最小のものに一致）とします。
 // 既定は貪欲（出現回数が最大のものに一致）です。
 
-// 問131 #正規表現
+// 問131 #高度な話題 #正規表現
 // 上記の文字列を使ってexecメソッドを使い文字列とし2つともconsole に出力してください
 // 期待する結果 //「もりた」「もりけん」
 
@@ -487,7 +488,7 @@ while ((result = re222.exec(str222)) !== null){
   console.log(result[0])
 }
 
-// 問132 #正規表現
+// 問132 #高度な話題 #正規表現
 // 下記の文字列の「客」という文字の部分ともうひとつある同じ文字である場合のみマッチする正規表現を作成してください
 // 	○あの客はよく柿食う客だ
 // 	×あの客はよく柿食う人だ
@@ -501,7 +502,7 @@ console.log(res5[0]); //あの客はよく柿食う客だ
 
 // \1 とは、その前にある() でマッチした文字列になる
 
-// 問133 #正規表現
+// 問133 #高度な話題 #正規表現
 // 次のタグ
 // // <1><2>kenjimorita.jp</3></4>
 // の1と4、2と3が同じ場合にtrue、違う場合はfalseを返す正規表現を書いてそれぞれ出力し確認してください
@@ -521,8 +522,9 @@ console.log(/<(\w+)><(\w+)>kenjimorita.jp<\/\2><\/\1>/.test(tag2)) //false
 まず正しくsortされないというのを観察する
 console.log([2, 3,-1, -6, 0, -108, 42, 10].sort())	//  [ -1, -108, -6,  0, 10,    2,  3, 42 ]
 													// → マイナス値がだめだね
+// コンパレータ関数とは sort() の第一引数として渡すことのできる関数（比較関数）のこと
 
-
+// 模範解答
 [2, 3,-1, -6, 0, -108, 42, 10].sort(function(x, y){
 	if(x < y) return -1;
 	if(y < x) return 1;
@@ -619,8 +621,8 @@ for(var i in foo) {
     }
 }
 
-問141 #高度な話題
-new Mapとnew WeakMapの違いを教えていください
+// 問141 #高度な話題
+// new Mapとnew WeakMapの違いを教えていください
 
 // http://uhyohyo.net/javascript/16_1.html ←大変よい記事なので読むと良い
 // > Map やオブジェクトはキーに文字列かシンボルしか使えない
@@ -775,7 +777,8 @@ var target = document.querySelector('div#target');
 var html = '<p>子要素</p>';
 target.insertAdjacentHTML('afterbegin',html);
 
-// 問150 こちら
+// 問150
+// こちら
 // 	(1)
 // 	<div id="target">
 // 	  <span>既存の内容</span>
